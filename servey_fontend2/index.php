@@ -21,7 +21,7 @@
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                     <h2 id="heading">Test System Servey</h2>
                     <p>Fill all form field to go to next step</p>
-                    <form id="msform"  name="form" id="form" method="post" action="#">
+                    <form id="msform"  name="form" id="form" method="post" action="#" class="needs-validation" novalidate>
                         <div class="form-group">
                             <!-- progressbar -->
                             <ul id="progressbar">
@@ -128,7 +128,7 @@
                                         </div>
                                         <div class="col-12" style="margin-top: 10px;">
                                             <label class="fieldlabels">ท่านเคยรับประทานอาหารเสริมประเภทวิตามิน หรือไม่ : *</label> <br>
-                                            <div class="custom-control custom-radio custom-control-inline">
+                                            <div class="custom-control custom-radio custom-control-inline customRadioInline4">
                                                 <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
                                                 <label class="custom-control-label" for="customRadioInline4">เคย </label>
                                             </div> 
