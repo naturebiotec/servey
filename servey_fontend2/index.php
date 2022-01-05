@@ -1253,7 +1253,7 @@
                                         </div>
                                     </div> 
                                 </div> 
-                                <input type="button" name="next" class="next action-button" value="Submit" /> 
+                                <input type="submit" name="next" id="submit" class="next action-button submit" value="Submit" /> 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
                             <fieldset>

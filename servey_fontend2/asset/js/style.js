@@ -70,6 +70,6 @@ $(document).ready(function() {
         }
         
         $(".submit").click(function(){
-        //  functio insert database 
-        })
+            console.log("Success Save data");
+        });
 })
