@@ -21,7 +21,7 @@
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                     <h2 id="heading">Test System Servey</h2>
                     <p>Fill all form field to go to next step</p>
-                    <form id="msform"  name="form" id="form" method="post" action="#" class="needs-validation" novalidate>
+                    <form id="msform"  name="form" id="form" method="get" action="#" class="needs-validation" novalidate>
                         <div class="form-group">
                             <!-- progressbar -->
                             <ul id="progressbar">
@@ -118,22 +118,22 @@
                                                 <label class="custom-control-label" for="customRadioInline1">เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค(โปรดเลือก)</label>
                                             </div> <br>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline2" name="customRadioInline2" class="custom-control-input">
                                                 <label class="custom-control-label" for="customRadioInline2">ไม่เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค</label>
                                             </div> <br>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline3" name="customRadioInline3" class="custom-control-input">
                                                 <label class="custom-control-label" for="customRadioInline3">เคย ใช้ผลิตภัณฑ์อื่นๆ (โปรดระบุ)</label>
                                             </div>
                                         </div>
                                         <div class="col-12" style="margin-top: 10px;">
                                             <label class="fieldlabels">ท่านเคยรับประทานอาหารเสริมประเภทวิตามิน หรือไม่ : *</label> <br>
                                             <div class="custom-control custom-radio custom-control-inline customRadioInline4">
-                                                <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline4" name="customRadioInline4" class="custom-control-input">
                                                 <label class="custom-control-label" for="customRadioInline4">เคย </label>
                                             </div> 
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline5" name="customRadioInline1" class="custom-control-input">
+                                                <input type="radio" id="customRadioInline5" name="customRadioInline5" class="custom-control-input">
                                                 <label class="custom-control-label" for="customRadioInline5">ไม่เคย </label>
                                             </div> <br>
                                         </div>
