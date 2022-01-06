@@ -13,7 +13,7 @@ p {
 
 #heading {
     text-transform: uppercase;
-    color: #673AB7;
+    color: #0fcf2f;
     font-weight: normal
 }
 
@@ -64,7 +64,7 @@ p {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #673AB7;
+    border: 1px solid #0fcf2f;
     outline-width: 0
 }
 
@@ -76,7 +76,7 @@ input[type=checkbox] {
 
 #msform .action-button {
     width: 100px;
-    background: #673AB7;
+    background: #0fcf2f;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -89,7 +89,7 @@ input[type=checkbox] {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    background-color: #311B92
+    background-color: #0fcf2f
 }
 
 #msform .action-button-previous {
@@ -118,14 +118,14 @@ input[type=checkbox] {
 
 .fs-title {
     font-size: 25px;
-    color: #673AB7;
+    color: #0fcf2f;
     margin-bottom: 15px;
     font-weight: normal;
     text-align: left
 }
 
 .purple-text {
-    color: #673AB7;
+    color: #0fcf2f;
     font-weight: normal
 }
 
@@ -149,7 +149,7 @@ input[type=checkbox] {
 }
 
 #progressbar .active {
-    color: #673AB7
+    color: #0fcf2f;
 }
 
 #progressbar li {
@@ -207,7 +207,7 @@ input[type=checkbox] {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7
+    background: #0fcf2f;
 }
 
 .progress {
@@ -215,7 +215,7 @@ input[type=checkbox] {
 }
 
 .progress-bar {
-    background-color: #673AB7
+    background-color: #0fcf2f;
 }
 
 .fit-image {
