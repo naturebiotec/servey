@@ -21,14 +21,14 @@
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                     <!-- <h2 id="heading">Test System Servey</h2> -->
                    <img src="./asset/img/1040x1040_AW_แบบสอบถาม-02.png" alt="" style="border-radius: 10px;">
-                    <form id="msform"  name="form" id="form" method="post" action="./database/servey_db.php" class="needs-validation" novalidate>
+                    <form id="msform"  name="form"  method="post" action="./database/servey_db.php" class="needs-validation" novalidate>
                         <div class="form-group">
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="personal"><strong>ข้อมูลส่วนตัว</strong></li>
+                                <!-- <li class="active" id="personal"><strong>ข้อมูลส่วนตัว</strong></li>
                                 <li id="personal"><strong>เคยใช้</strong></li>
-                                <li id="payment"><strong>ไม่เคยใช้</strong></li>
-                                <li id="confirm"><strong>Finish</strong></li>
+                                <li id="payment" class="payment"><strong>ไม่เคยใช้</strong></li>
+                                <li id="confirm"><strong>Finish</strong></li> -->
                             </ul>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -40,12 +40,12 @@
                                             <h2 class="fs-title">ข้อมูลส่วนตัว:</h2>
                                         </div>
                                         <div class="col-5">
-                                            <h2 class="steps">Step 1 - 4</h2>
+                                            <h2 class="steps"></h2>
                                         </div>
                                     </div> 
                                     <!-- input fileds data -->
                                     <div class="row">
-                                        <input type="hidden" name="UID" id="UID">
+                                        <input type="hidden" name="UID" id="UID" value="IDaudiadyuaiksjdksadklasjdlasdja778">
                                         <div class="col-6">
                                             <!-- name -->
                                             <label class="fieldlabels">ชื่อ: *</label> 
@@ -59,7 +59,7 @@
                                         <div class="col-12">
                                             <!-- tel -->
                                             <label class="fieldlabels">เบอร์โทรศัพท์: *</label>  <br>
-                                            <input type="tel" name="tel" id="tel" placeholder="เบอร์โทรศัพท์"  class="form-control" /> 
+                                            <input type="tel" name="tel" id="tel" maxlength="10" placeholder="เบอร์โทรศัพท์"  class="form-control" /> 
                                         </div>
                                         <div class="col-6">
                                             <!-- gender -->
@@ -118,6 +118,7 @@
                                                 <input type="radio" id="customRadioInline1" name="status_inquiry" class="custom-control-input" value="เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค(โปรดเลือก)">
                                                 <label class="custom-control-label" for="customRadioInline1">เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค(โปรดเลือก)</label>
                                             </div> <br>
+                                            <!-- แก้เป็น seleced -->
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input type="radio" id="customRadioInline2" name="status_inquiry" class="custom-control-input" value="ไม่เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค">
                                                 <label class="custom-control-label" for="customRadioInline2">ไม่เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค</label>
@@ -126,6 +127,7 @@
                                                 <input type="radio" id="customRadioInline3" name="status_inquiry" class="custom-control-input" value="เคย ใช้ผลิตภัณฑ์อื่นๆ (โปรดระบุ)">
                                                 <label class="custom-control-label" for="customRadioInline3">เคย ใช้ผลิตภัณฑ์อื่นๆ (โปรดระบุ)</label>
                                             </div>
+                                            <!-- แก้เป็น input  -->
                                         </div>
                                         <div class="col-12" style="margin-top: 10px;">
                                             <label class="fieldlabels">ท่านเคยรับประทานอาหารเสริมประเภทวิตามิน หรือไม่ : *</label> <br>
@@ -147,10 +149,10 @@
                                 <div class="form-card">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="fs-title">เคยใช้: วิทตามิน</h2>
+                                            <h2 class="fs-title">เคยใช้: วิตามิน</h2>
                                         </div>
                                         <div class="col-5">
-                                            <h2 class="steps">Step 2 - 4</h2>
+                                            <h2 class="steps"></h2>
                                         </div>
                                         <div class="col-12">
                                             <label class="fieldlabels">1.ท่านรับประทานวิตามินประเภทใด มากที่สุด (เลือกได้มากกว่า1ข้อ) : *</label> 
@@ -584,28 +586,28 @@
 (เลือกได้มากกว่า1ข้อ): *</label>
                                             <div class="card-body" style="border: 1px solid #dddddd; border-radius: 5px;">
                                                 <div class="form-check">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="soical" id="inlineCheckbox1" value="Facebook">
+                                                    <div class="form-check"> 
+                                                        <input class="form-check-input" type="checkbox" name="soical[]" id="inlineCheckbox1" value="Facebook">
                                                         <label class="form-check-label" for="inlineCheckbox1">Facebook </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="soical" id="inlineCheckbox1" value="Instagarm">
+                                                        <input class="form-check-input" type="checkbox" name="soical[]" id="inlineCheckbox1" value="Instagarm">
                                                         <label class="form-check-label" for="inlineCheckbox1">Instagarm </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="soical" id="inlineCheckbox1" value="Line">
+                                                        <input class="form-check-input" type="checkbox" name="soical[]" id="inlineCheckbox1" value="Line">
                                                         <label class="form-check-label" for="inlineCheckbox1">Line </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="soical" id="inlineCheckbox1" value="Tiktok">
+                                                        <input class="form-check-input" type="checkbox" name="soical[]" id="inlineCheckbox1" value="Tiktok">
                                                         <label class="form-check-label" for="inlineCheckbox1">Tiktok </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="soical" id="inlineCheckbox1" value="Twitter">
+                                                        <input class="form-check-input" type="checkbox" name="soical[]" id="inlineCheckbox1" value="Twitter">
                                                         <label class="form-check-label" for="inlineCheckbox1">Twitter </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="soical" id="inlineCheckbox1" value="อื่นๆ(โปรดระบุ)">
+                                                        <input class="form-check-input" type="checkbox" name="soical[]" id="inlineCheckbox1" value="อื่นๆ(โปรดระบุ)">
                                                         <label class="form-check-label" for="inlineCheckbox1">อื่นๆ(โปรดระบุ) </label>
                                                     </div>
                                                 </div>
@@ -692,19 +694,25 @@
                                             <input type="input" name="case_question" id="case_question" placeholder="โปรดระบุ"  class="form-control" />  <br>
                                         </div>
                                     </div>
-                                    
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="terms_and_conditions" id="terms_and_conditions" value="1">
+                                            <label class="form-check-label" for="terms_and_conditions">ยอมรับเงื่อนไข</label>
+                                        </div>
+                                    </div>
                                 </div> 
-                                <input type="submit" name="next" class="next action-button" value="submit" /> 
+                                <input type="submit" name="next" id="next" class="next action-button" value="submit" /> 
+                                <!-- disabled="disabled" -->
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
-                            <fieldset>
+                            <fieldset class="part-2">
                                 <div class="form-card">
                                     <div class="row">
                                         <div class="col-7">
-                                            <h2 class="fs-title">ไม่เคยใช้:</h2>
+                                            <h2 class="fs-title">ไม่เคยใช้: วิตามิน</h2>
                                         </div>
                                         <div class="col-5">
-                                            <h2 class="steps">Step 3 - 4</h2>
+                                            <h2 class="steps"></h2>
                                         </div>
                                         <div class="col-12">
                                             <label class="fieldlabels">1.สาเหตุที่ท่านไม่ทานผลิตภัณฑ์วิตามิน  
@@ -1252,9 +1260,15 @@
                                                 </div> 
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>  <br>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="terms_and_conditions" id="terms_and_conditions" value="1">
+                                            <label class="form-check-label" for="terms_and_conditions">ยอมรับเงื่อนไข</label>
+                                        </div>
+                                    </div>
                                 </div> 
-                                <input type="submit" name="next" id="submit" class="next action-button" value="Submit" /> 
+                                <input type="submit" name="next" id="submit" class="next action-button"  value="Submit" /> 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
                             <fieldset>
@@ -1264,7 +1278,7 @@
                                             <h2 class="fs-title">Finish:</h2>
                                         </div>
                                         <div class="col-5">
-                                            <h2 class="steps">Step 4 - 4</h2>
+                                            <h2 class="steps"></h2>
                                         </div>
                                     </div> <br><br>
                                 </div>
