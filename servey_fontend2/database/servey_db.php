@@ -3,14 +3,14 @@
 
     // pre array vaibale 
 
-    echo '<pre>';
-        print_r($_POST);
-    echo '</pre>';
+    // echo '<pre>';
+    //     print_r($_POST);
+    // echo '</pre>';
 
-    if(isset($_POST['submit']))
+    if(isset($_POST['next']))
     {
-    
         // varibale input
+        $UID = $_POST['UID'];
         $name = $_POST['name'];
         $last_name = $_POST['last_name'];
         $tel = $_POST['tel'];
@@ -34,11 +34,10 @@
         $information_vitamin = $_POST['information_vitamin'];
         $influence = $_POST['influence'];
         $promtion = $_POST['promtion'];
-        $soical = $_POST['soical'];
         $consider = $_POST['consider'];
-        $feature = $_POST['feature'];
         $brand = $_POST['brand'];
         $case_question = $_POST['case_question'];
+        $terms_and_conditions = $_POST['terms_and_conditions'];
 
         // varibale array
         $vitamin = $_POST['vitamin'];
@@ -112,12 +111,47 @@
             $decide_arr .= $arr_dd;
         }
 
-        // insert data  to database -> servery 
-        // $sql_insetr_data = "INSERT INTO servey (UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
-        // VALUES ()";
-        // query save data
-        // $query_insert_data = mysqli_query($conn,$sql_insetr_data) or die("Errors: $sql_insetr_data".mysqli_error($conn));
+        // variable array soical
+        $soical = $_POST['soical'];
+        $soical_arr = '';
+        // loop array
+        foreach($soical as $arr_so)
+        {
+            $soical_arr .= $arr_so;
+        }
 
+        // variable array feature
+        $feature = $_POST['feature'];
+        $feature_arr = '';
+        // loop array
+        foreach($feature as $arr_ft)
+        {
+            $feature_arr .= $arr_ft;
+        }
+
+
+        /**
+         * insert database
+         * @void add  
+         */
+        $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
+
+        VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
+
+        $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
+
+        /**
+         * check send data trastion to database -> servey
+         * if success echo Successfully 
+         * or faild echo Error Somting 
+         */
+
+         if($query_add)
+         {
+             echo "Successfully :D";
+         }else {
+             echo "Errors Somting D:";
+         }
     } 
 
 ?>
