@@ -1,9 +1,24 @@
 $(document).ready(function() {
     // varibale
-    var current_fs, next_fs, previous_fs; // fieldsets
+    var current_fs, next_fs, previous_fs, next_fs_part; // fieldsets
     var opacity;
     var current = 1 ;
     var steps = $("fieldset").length;
+
+
+     /**
+     * !!BUG
+     */
+    // check button  chekbox before submit
+    // $("#terms_and_conditions").click(function() {
+    //     // if check click event handler into checkbox.
+    //     if($(this).is(":checked"))
+    //     {
+    //         $(".next").attr("disabled", false);
+    //     }else{
+    //         $(".next").attr("disabled", true);
+    //     }
+    // }); -> 
 
     // button next page
     $(".next").click(function() {
@@ -21,9 +36,10 @@ $(document).ready(function() {
             // console.log("used");
 
         }else {
-            console.log("noe-used");
-            // next_fs1.show();
+            next_fs_part = $(document.getElementsByClassName("part-2"));
             
+            $("#progressbar payment").eq($("fieldset").index(next_fs_part)).addClass("active");
+            next_fs_part.show();
         }
 
         // Add Class Ative Bar Process 
