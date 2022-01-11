@@ -1,3 +1,63 @@
+$(function () {
+    $('.inredient ').click(function(e) {
+        $('.inredient ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.type_vitamin ').click(function(e) {
+        $('.type_vitamin ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.amount ').click(function(e) {
+        $('.amount ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.how_often ').click(function(e) {
+        $('.how_often ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.how_often ').click(function(e) {
+        $('.how_often ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.many_kind ').click(function(e) {
+        $('.many_kind ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.information_vitamin ').click(function(e) {
+        $('.information_vitamin ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.influence ').click(function(e) {
+        $('.influence ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.promtion ').click(function(e) {
+        $('.promtion ').not(this).prop('checked', false);
+    });
+});
+
+$(function () {
+    $('.inredient ').click(function(e) {
+        $('.inredient ').not(this).prop('checked', false);
+    });
+});
+
 $(document).ready(function() {
     // varibale
     var current_fs, next_fs, previous_fs, next_fs_part; // fieldsets
@@ -19,6 +79,130 @@ $(document).ready(function() {
     //         $(".next").attr("disabled", true);
     //     }
     // }); -> 
+
+    $("input[type='radio']").change(function(){
+        if($(this).val()=="other")
+          $(this).closest("div").find("input[name=status_inquiry]").css('display', 'inline-block');
+        else
+          $(this).closest("div").find("input[name=status_inquiry]").css('display', 'none'); 
+      });
+    //   hidden textbox -> infomation vitamin
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=information_vitamin]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=information_vitamin]").css('display','none');
+        }
+    });
+    // advert -> hide advert
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=advert]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=advert]").css('display','none');
+        }
+    });
+    // vitamin -> hide vitamin
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=vitamin]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=vitamin]").css('display','none');
+        }
+    });
+    // main_case -> hide main_case
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=main_case]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=main_case]").css('display','none');
+        }
+    });
+    // inredient -> hiden inredient
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=inredient]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=inredient]").css('display','none');
+        }
+    });
+    // type_vitamin -> hide type_vitamin
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=type_vitamin]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=type_vitamin]").css('display','none');
+        }
+    });
+    // influence ->hide influence
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=influence]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=influence]").css('display','none');
+        }
+    });
+    // promtion
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=promtion]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=promtion]").css('display','none');
+        }
+    });
+    // soical
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=soical]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=soical]").css('display','none');
+        }
+    });
+    // feature
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=feature]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=feature]").css('display','none');
+        }
+    });
+    // case_eat
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=case_eat]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=case_eat]").css('display','none');
+        }
+    });
+    //know_vitamin
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=know_vitamin]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=know_vitamin]").css('display','none');
+        }
+    });
+    // decide
+    $("input[type='checkbox']").change(function() {
+        if($(this).val() == "other")
+        {
+            $(this).closest("div").find("input[id=decide]").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id=decide]").css('display','none');
+        }
+    });
 
     // button next page
     $(".next").click(function() {
