@@ -42,6 +42,11 @@ p {
     display: none
 }
 
+/* input radio hide */
+input.hidden-other {
+    display: none;
+}
+
 #msform input,
 #msform textarea {
     padding: 8px 15px 8px 15px;
