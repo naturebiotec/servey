@@ -21,7 +21,7 @@
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                     <!-- <h2 id="heading">Test System Servey</h2> -->
                    <img src="./asset/img/1040x1040_AW_แบบสอบถาม-02.png" alt="" style="border-radius: 10px;">
-                    <form id="msform"  name="form"  method="post" action="./database/servey_db.php" class="needs-validation" novalidate>
+                    <form id="msform"  name="form"  method="post" action="./database/servey_db.php">
                         <div class="form-group">
                             <!-- progressbar -->
                             <ul id="progressbar">
@@ -45,27 +45,27 @@
                                     </div> 
                                     <!-- input fileds data -->
                                     <div class="row">
-                                        <input type="hidden" name="UID" id="UID" value="">
+                                        <input type="hidden" class="form-control" name="UID" id="UID">
                                         <div class="col-6">
                                             <!-- name -->
                                             <label class="fieldlabels">ชื่อ: *</label> 
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="ชื่อ" /> 
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="ชื่อ"> 
                                         </div>
                                         <div class="col-6">
                                             <!-- last_name -->
                                             <label class="fieldlabels">นามสกุล: *</label>  <br>
-                                            <input type="text" name="last_name" id="last_name"  class="form-control" placeholder="นามสกุล" /> 
+                                            <input type="text" name="last_name" id="last_name"  class="form-control" placeholder="นามสกุล"> 
                                         </div>
                                         <div class="col-12">
                                             <!-- tel -->
                                             <label class="fieldlabels">เบอร์โทรศัพท์: *</label>  <br>
-                                            <input type="tel" name="tel" id="tel" maxlength="10" placeholder="เบอร์โทรศัพท์"  class="form-control" /> 
+                                            <input type="tel" name="tel" id="tel" maxlength="10" placeholder="เบอร์โทรศัพท์"  class="form-control"> 
                                         </div>
                                         <div class="col-6">
                                             <!-- gender -->
                                             <label class="fieldlabels">เพศ: *</label> 
-                                            <select class="custom-select " id="inputGroupSelect01" name="gender" id="gender">
-                                                <option selected disabled>กรุณาเลือกเพศ</option>
+                                            <select class="custom-select" name="gender" id="gender">
+                                                <option  selected disabled>กรุณาเลือกเพศ</option>
                                                 <option value="male">ชาย</option>
                                                 <option value="female">หญิง</option>
                                                 <option value="LGBT">LGBT</option>
@@ -74,13 +74,13 @@
                                         <div class="col-6">
                                             <!-- age -->
                                             <label class="fieldlabels">อายุ: *</label>
-                                            <input type="number" name="age" id="age" placeholder="กรุณากรอกอายุ"  class="form-control" /> 
+                                            <input type="text"  name="age" id="age" placeholder="กรุณากรอกอายุ"  class="form-control"> 
                                         </div>
                                         <div class="col-12">
                                             <!-- grander -->
                                             <label class="fieldlabels">การศึกษา: *</label>
-                                            <select class="custom-select" id="inputGroupSelect02" name="study" id="study">
-                                                <option selected disabled>กรุณาเลือกระดับการศึกษา</option>
+                                            <select class="custom-select" name="study" id="study">
+                                                <option  selected disabled>กรุณาเลือกระดับการศึกษา</option>
                                                 <option value="มัธยมศึกษาตอนต้นหรือต่ำกว่า">มัธยมศึกษาตอนต้นหรือต่ำกว่า</option>
                                                 <option value="มัธยมศึกษาตอนปลายหรือเทียบเท่า">มัธยมศึกษาตอนปลายหรือเทียบเท่า</option>
                                                 <option value="อนุปริญญาหรือเทียบเท่า">อนุปริญญาหรือเทียบเท่า</option>
@@ -91,7 +91,7 @@
                                             <!-- job -->
                                             <label class="fieldlabels">อาชีพ: *</label>
                                             <select class="custom-select" id="inputGroupSelect03" name="job" id="job">
-                                                <option selected disabled>กรุณาเลือกอาชีพ</option>
+                                                <option  selected disabled>กรุณาเลือกอาชีพ</option>
                                                 <option value="พนักงานเอกชน">พนักงานเอกชน</option>
                                                 <option value="ข้าราชการ/พนักงานรัฐวิสาหกิจ">ข้าราชการ/พนักงานรัฐวิสาหกิจ</option>
                                                 <option value="แม่บ้าน/พ่อบ้าน">แม่บ้าน/พ่อบ้าน</option>
@@ -103,7 +103,7 @@
                                         <div class="col-12" style="margin-top: 10px;">
                                             <!-- prcices -->
                                             <label class="fieldlabels">รายได้: *</label>
-                                            <select name="" id="" class="custom-select" name="income" id="income">
+                                            <select class="custom-select" name="income" id="income">
                                                 <option disabled selected>กรุณาเลือกรายได้</option>
                                                 <option value="ต่ำกว่า 10,000บาท">ต่ำกว่า 10,000บาท</option>
                                                 <option value="10,001-20,000บาท">10,001-20,000บาท</option>
@@ -113,14 +113,14 @@
                                             </select>
                                         </div>
                                         <div class="col-12" style="margin-top: 10px;">
-                                        <label class="fieldlabels">ที่อยู่: *</label>
+                                        <label class="fieldlabels">ที่อยู่ในการจัดส่งสินค้า: *</label>
                                             <div class="card-body" style="border: 1px solid #B6B6B6; border-radius: 5px;">
                                                 <div class="row">
                                                     <!-- address  -->
                                                     <div class="col-12" style="margin-top: 10px;">
                                                         <div class="form-group">
                                                             <label for="address">ที่อยู่</label>
-                                                            <textarea class="form-control" id="address" rows="3"></textarea>
+                                                            <textarea class="form-control" name="address" id="address" rows="3"></textarea>
                                                         </div>
                                                     </div>
                                                     <!-- district / amphoe -->
@@ -144,49 +144,56 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- validate from group  -->
                                         <div class="col-12" style="margin-top: 10px;">
-                                        <label class="fieldlabels">สถานะของผู้สอบถาม: *</label>
-                                            <div class="card-body" style="border: 1px solid #B6B6B6; border-radius: 5px;">
-                                                <select name="status_inquiry" id="status_inquiry" class="custom-select">
-                                                    <option disabled selected>กรุณาเลือกผลิตภัณฑ์</option>
-                                                    <option value="G2X">G2X</option>
-                                                    <option value="Xtra">Xtra</option>
-                                                    <option value="Ex8">Ex8</option>
-                                                    <option value="Aglen">Aglen</option>
-                                                    <option value="Zego">Zego</option>
-                                                </select> <br><br>
-                                                <!-- selected -->
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="status_inquiry" id="status_inquiry" value="ไม่เคย">
-                                                    <label class="form-check-label" for="status_inquiry">ไม่เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค </label>
-                                                </div> <br>
-                                                <!-- checkbox -->
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="other" name="other" class="custom-control-input" value="other" >
-                                                    <label class="custom-control-label" for="other">เคย ใช้ผลิตภัณฑ์อื่นๆ (โปรดระบุ) </label>
-                                                    <input type="text" class="form-control hidden-other" name="status_inquiry" id="status_inquiry">
-                                                </div> 
-                                                <!-- <label for="status_inquiry">เคย ใช้ผลิตภัณฑ์อื่นๆ (โปรดระบุ)</label>
-                                                <input type="radio" class="form-control" name="status_inquiry" id="status_inquiry" value="other"> -->
+                                            <div class="form-group">
+                                                <label class="fieldlabels">สถานะของผู้สอบถาม: *</label>
+                                                    <div class="card-body" style="border: 1px solid #B6B6B6; border-radius: 5px;">
+                                                        <label class="fieldlabels">เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค(โปรดเลือก): *</label>
+                                                        <select name="status_inquiry[]" id="status_inquiry" class="custom-select" >
+                                                            <option disabled selected>กรุณาเลือกผลิตภัณฑ์</option>
+                                                            <option value="หลินจือมิน">หลินจือมิน</option>
+                                                            <option value="หลินจือมิน เอ็กซ์ตร้า">หลินจือมิน เอ็กซ์ตร้า</option>
+                                                            <option value="เซนโก">เซนโก</option>
+                                                            <option value="จีทูเอ็กซ์">จีทูเอ็กซ์</option>
+                                                            <option value="คอลลาเจน เซนโก">คอลลาเจน เซนโก</option>
+                                                            <option value="เอ็กซ์เอท">เอ็กซ์เอท</option>
+                                                        </select> <br><br>
+                                                        <!-- selected -->
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input class="custom-control-input" type="radio" name="status_inquiry[]" id="status_inquiry2" value="ไม่เคย" >
+                                                            <label class="custom-control-label" for="status_inquiry2">ไม่เคย ใช้ผลิตภัณฑ์ของเนเจอร์ไบโอเทค </label>
+                                                        </div> <br>
+                                                        <!-- checkbox -->
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input type="radio" id="other" name="status_inquiry[]" class="custom-control-input">
+                                                            <label class="custom-control-label" for="other">เคย ใช้ผลิตภัณฑ์อื่นๆ (โปรดระบุ) </label>
+                                                            <input type="text" class="form-control hidden-other" name="status_inquiry[]" id="status_inquiry" >
+                                                        </div> 
+                                                        <!-- <label for="status_inquiry">เคย ใช้ผลิตภัณฑ์อื่นๆ (โปรดระบุ)</label>
+                                                        <input type="radio" class="form-control" name="status_inquiry" id="status_inquiry" value="other"> -->
 
-                                                <!-- input  -->
-                                            </div> 
+                                                        <!-- input  -->
+                                                    </div>   
+                                            </div>
                                         </div> 
                                         <div class="col-12" style="margin-top: 10px;">
                                             <label class="fieldlabels">ท่านเคยรับประทานอาหารเสริมประเภทวิตามิน หรือไม่ : *</label> <br>
                                             <div class="custom-control custom-radio custom-control-inline customRadioInline4">
-                                                <input type="radio" id="customRadioInline4" name="ever_vitamin" class="custom-control-input" value="used" >
+                                                <input type="radio" id="customRadioInline4" name="ever_vitamin" class="custom-control-input" value="used" onclick="radioenble(this)">
                                                 <label class="custom-control-label" for="customRadioInline4">เคย </label>
                                             </div> 
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" id="customRadioInline5" name="ever_vitamin" class="custom-control-input" value="non-used">
+                                                <input type="radio" id="customRadioInline5" name="ever_vitamin" class="custom-control-input" value="non-used" onclick="radioenble(this)">
                                                 <label class="custom-control-label" for="customRadioInline5">ไม่เคย </label>
                                             </div> <br>
                                         </div>
+                                       <!-- // onclick="radioenble(this)" -->
                                     </div>
                                 </div> 
                                 <!-- <input type="button" name="next" class="next action-button" value="Submit" />  -->
-                                <input type="button" name="next" class="next action-button" value="Next" />
+                                <input type="button" name="next" id="next" class="next action-button disabled" value="Next" disabled/>
+                                <!-- disabled  -->
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -200,7 +207,6 @@
                                         <div class="col-12">
                                             <label class="fieldlabels">1.ท่านรับประทานวิตามินประเภทใด มากที่สุด (เลือกได้มากกว่า1ข้อ) : *</label> 
                                             <div class="card-body" style="border: 1px solid #dddddd; border-radius: 5px;">
-                                                <div class="form-check">
                                                     <div class="form-check"> 
                                                         <input class="form-check-input" type="checkbox" name="vitamin[]" id="inlineCheckbox1" value="วิตามินเอ Vitamin A">
                                                         <label class="form-check-label" for="inlineCheckbox1">วิตามินเอ Vitamin A </label>
@@ -254,13 +260,11 @@
                                                         <label class="form-check-label" for="other">อื่นๆ(โปรดระบุ) </label>
                                                         <input type="text" class="form-control hidden-other" name="vitamin[]" id="vitamin">
                                                     </div>
-                                                </div>
                                             </div> <br>
                                             <!-- 1 -->
                                             <label class="fieldlabels">2.ท่านให้ความสำคัญกับเรื่องใด มากที่สุด
 (เลือกได้มากกว่า1ข้อ) : *</label> 
                                             <div class="card-body" style="border: 1px solid #dddddd; border-radius: 5px;">
-                                                 <div class="form-check">
                                                     <div class="form-check"> 
                                                         <input class="form-check-input" type="checkbox" name="importen[]" id="inlineCheckbox1" value="ประสิทธิภาพด้านการมองเห็น">
                                                         <label class="form-check-label" for="inlineCheckbox1">ประสิทธิภาพด้านการมองเห็น </label>
@@ -305,12 +309,12 @@
                                                         <input class="form-check-input" type="checkbox" name="importen[]" id="inlineCheckbox1" value="บำรุงผิว/ผม/เล็บ ลดสิว">
                                                         <label class="form-check-label" for="inlineCheckbox1">บำรุงผิว/ผม/เล็บ ลดสิว </label>
                                                     </div>
-                                                 </div>
                                             </div> <br>
                                             <!-- 2 -->
                                             <label class="fieldlabels">3.สาเหตุหลักที่ทำให้ท่านทานวิตามิน คืออะไร
 (เลือกได้มากกว่า1ข้อ) : *</label> 
                                             <div class="card-body" style="border: 1px solid #dddddd; border-radius: 5px;">
+                                            <!-- clear check box other box 13.00 pm -->
                                                 <div class="form-check">
                                                         <div class="form-check"> 
                                                             <input class="form-check-input" type="checkbox" name="main_case[]" id="inlineCheckbox1" value="มีประโยชน์">
@@ -562,38 +566,16 @@
                                                             <input class="form-check-input influence" type="checkbox" name="influence" id="inlineCheckbox1" value="ผู้เชี่ยวชาญ นักวิชาการ ผู้ที่มีความน่าเชื่อถือ (Blogger)">
                                                             <label class="form-check-label" for="inlineCheckbox1">ผู้เชี่ยวชาญ นักวิชาการ ผู้ที่มีความน่าเชื่อถือ (Blogger) </label>
                                                         </div>
-                                                        <div class="form-check">
+                                                        <!-- <div class="form-check">
                                                             <input class="form-check-input influence" type="checkbox" name="other" id="other"  value="other">
                                                             <label class="form-check-label" for="other">อื่นๆ(โปรดระบุ) </label>
                                                             <input type="text" class="form-control hidden-other" name="influence" id="influence">
-                                                        </div>
+                                                        </div> -->
                                                 </div>
                                             </div> <br>
                                             <label class="fieldlabels">12.แหล่งโฆษณาที่ท่านคิดว่าน่าเชื่อถือ 
 (เลือกได้มากกว่า1ข้อ): *</label>
                                             <div class="card-body" style="border: 1px solid #dddddd; border-radius: 5px;">
-                                                <!-- <div class="form-check"> 
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="TV (โปรดระบุช่องหรือรายการที่ท่านรับชม)">
-                                                            <label class="form-check-label" for="inlineCheckbox1">TV (โปรดระบุช่องหรือรายการที่ท่านรับชม) </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="Online (โปรดระบุแพลตฟอร์มที่ท่านรับชม)">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Online (โปรดระบุแพลตฟอร์มที่ท่านรับชม) </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="Radio (โปรดระบุคลื่นวิทยุหรือรายการที่ท่านรับชม)">
-                                                            <label class="form-check-label" for="inlineCheckbox1">Radio (โปรดระบุคลื่นวิทยุหรือรายการที่ท่านรับชม) </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="สื่อสิ่งพิมพ์ (โปรดระบุคอลัมน์ หรือ ชื่อสิ่งพิมพ์ที่ท่านรับชม)">
-                                                            <label class="form-check-label" for="inlineCheckbox1">สื่อสิ่งพิมพ์ (โปรดระบุคอลัมน์ หรือ ชื่อสิ่งพิมพ์ที่ท่านรับชม) </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="สื่อกลางแจ้ง(โปรดระบุสื่อกลางแจ้งที่ท่านพบเช่น บิลบอร์ด,ป้ายโฆษณา,สติกเกอร์ติดรถ)">
-                                                            <label class="form-check-label" for="inlineCheckbox1">สื่อกลางแจ้ง(โปรดระบุสื่อกลางแจ้งที่ท่านพบเช่น บิลบอร์ด,ป้ายโฆษณา,สติกเกอร์ติดรถ) </label>
-                                                        </div>
-                                                </div> -->
                                                 <div class="form-check">
                                                     <input type="checkbox" class="form-check-input" name="other" id="other" value="other">
                                                     <label for="other">TV (โปรดระบุช่องหรือรายการที่ท่านรับชม)</label>
@@ -647,11 +629,11 @@
                                                         <input class="form-check-input promtion" type="checkbox" name="promtion" id="inlineCheckbox1" value="การสะสมแลกสินค้า">
                                                         <label class="form-check-label" for="inlineCheckbox1">การสะสมแลกสินค้า </label>
                                                     </div>
-                                                    <div class="form-check">
+                                                    <!-- <div class="form-check">
                                                         <input class="form-check-input promtion" type="checkbox" name="other" id="other"  value="other">
                                                         <label class="form-check-label" for="other">อื่นๆ(โปรดระบุ) </label>
                                                         <input type="text" class="form-control hidden-other" name="promtion" id="promtion">
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div> <br>
                                             <label class="fieldlabels">14.ช่องทางออนไลน์ที่ท่านใช้งานบ่อยที่สุด
@@ -690,31 +672,31 @@
                                             <div class="card-body" style="border: 1px solid #dddddd; border-radius: 5px;">
                                                 <div class="form-check">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="consider" id="inlineCheckbox1" value="รีวิวจาก Bloggers/รีวิวจาก Bloggers/Influencers (โปรดระบุBloggers/Influencersที่ท่านติดตาม)">
+                                                        <input class="form-check-input" type="checkbox" name="consider[]" id="inlineCheckbox1" value="รีวิวจาก Bloggers/รีวิวจาก Bloggers/Influencers (โปรดระบุBloggers/Influencersที่ท่านติดตาม)">
                                                         <label class="form-check-label" for="inlineCheckbox1">รีวิวจาก Bloggers/รีวิวจาก Bloggers/Influencers (โปรดระบุBloggers/Influencersที่ท่านติดตาม) </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="consider" id="inlineCheckbox1" value="ค้นหาข้อมูลจาก Google">
+                                                        <input class="form-check-input" type="checkbox" name="consider[]" id="inlineCheckbox1" value="ค้นหาข้อมูลจาก Google">
                                                         <label class="form-check-label" for="inlineCheckbox1">ค้นหาข้อมูลจาก Google </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="consider" id="inlineCheckbox1" value="ค้นหาข้อมูลจากกระทู้ Pantip">
+                                                        <input class="form-check-input" type="checkbox" name="consider[]" id="inlineCheckbox1" value="ค้นหาข้อมูลจากกระทู้ Pantip">
                                                         <label class="form-check-label" for="inlineCheckbox1">ค้นหาข้อมูลจากกระทู้ Pantip </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="consider" id="inlineCheckbox1" value="สอบถามกับทางบริษัทผู้จัดจำหน่าย (โปรดระบุวิธีการสอบถามเช่น โทรศัพท์สอบถาม,สอบถามผ่านเวปไซต์)">
+                                                        <input class="form-check-input" type="checkbox" name="consider[]" id="inlineCheckbox1" value="สอบถามกับทางบริษัทผู้จัดจำหน่าย (โปรดระบุวิธีการสอบถามเช่น โทรศัพท์สอบถาม,สอบถามผ่านเวปไซต์)">
                                                         <label class="form-check-label" for="inlineCheckbox1">สอบถามกับทางบริษัทผู้จัดจำหน่าย (โปรดระบุวิธีการสอบถามเช่น โทรศัพท์สอบถาม,สอบถามผ่านเวปไซต์) </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="consider" id="inlineCheckbox1" value="หาข้อมูลสินค้าเพิ่มเติมที่เวปไซต์แบรนด์">
+                                                        <input class="form-check-input" type="checkbox" name="consider[]" id="inlineCheckbox1" value="หาข้อมูลสินค้าเพิ่มเติมที่เวปไซต์แบรนด์">
                                                         <label class="form-check-label" for="inlineCheckbox1">หาข้อมูลสินค้าเพิ่มเติมที่เวปไซต์แบรนด์ </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="consider" id="inlineCheckbox1" value="ถามพนักงานขาย ตัวแทน เภสัช">
+                                                        <input class="form-check-input" type="checkbox" name="consider[]" id="inlineCheckbox1" value="ถามพนักงานขาย ตัวแทน เภสัช">
                                                         <label class="form-check-label" for="inlineCheckbox1">ถามพนักงานขาย ตัวแทน เภสัช </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="consider" id="inlineCheckbox1" value="ถามเพื่อนหรือคนในครอบครัว">
+                                                        <input class="form-check-input" type="checkbox" name="consider[]" id="inlineCheckbox1" value="ถามเพื่อนหรือคนในครอบครัว">
                                                         <label class="form-check-label" for="inlineCheckbox1">ถามเพื่อนหรือคนในครอบครัว </label>
                                                     </div>
                                                 </div>
@@ -770,12 +752,15 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="terms_and_conditions" id="terms_and_conditions" value="1" checked>
+                                            <input class="form-check-input terms_and_conditions" type="checkbox" name="terms_and_conditions" id="terms_and_conditions" value="1" >
                                             <label class="form-check-label" for="terms_and_conditions">ยอมรับเงื่อนไข <a href="conditions.php" target="_blank">ดูเพิ่มเติม</a> </label>
                                         </div>
                                     </div>
                                 </div> 
-                                <input type="submit" name="next" id="next" class="next action-button" value="submit" /> 
+                                <!-- submit form -->
+                                <input type="submit" name="next" id="next"  class="next_sub action-button disabled" value="submit" disabled="disabled" /> 
+                                <!-- <input type="button" name="next" id="next" class="next action-button disabled" value="Next" disabled/> -->
+                                <!-- name="next" id="next" -->
                                 <!-- disabled="disabled" -->
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
@@ -1162,39 +1147,17 @@
                                                         <input class="form-check-input influence" type="checkbox" name="influence" id="inlineCheckbox1" value="ผู้เชี่ยวชาญ นักวิชาการ ผู้ที่มีความน่าเชื่อถือ (Blogger)">
                                                         <label class="form-check-label" for="inlineCheckbox1">ผู้เชี่ยวชาญ นักวิชาการ ผู้ที่มีความน่าเชื่อถือ (Blogger) </label>
                                                     </div>
-                                                    <div class="form-check">
+                                                    <!-- <div class="form-check">
                                                         <input class="form-check-input influence" type="checkbox" name="other" id="other"  value="other">
                                                         <label class="form-check-label" for="other">อื่นๆ(โปรดระบุ) </label>
                                                         <input type="text" class="form-control hidden-other" name="influence" id="influence">
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div> <br>
                                             <!-- 9 -->
                                             <label class="fieldlabels">10.แหล่งโฆษณาที่ท่านคิดว่าน่าเชื่อถือ 
 (เลือกได้มากกว่า1ข้อ) : *</label>
                                             <div class="card-body" style="border: 1px solid #dddddd; border-radius: 5px;">
-                                                <!-- <div class="form-check">
-                                                    <div class="form-check"> 
-                                                        <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="TV (โปรดระบุช่องหรือรายการที่ท่านรับชม)">
-                                                        <label class="form-check-label" for="inlineCheckbox1">TV (โปรดระบุช่องหรือรายการที่ท่านรับชม) </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="Online (โปรดระบุแพลตฟอร์มที่ท่านรับชม)">
-                                                        <label class="form-check-label" for="inlineCheckbox1">Online (โปรดระบุแพลตฟอร์มที่ท่านรับชม) </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="Radio (โปรดระบุคลื่นวิทยุหรือรายการที่ท่านรับชม)">
-                                                        <label class="form-check-label" for="inlineCheckbox1">Radio (โปรดระบุคลื่นวิทยุหรือรายการที่ท่านรับชม) </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="สื่อสิ่งพิมพ์ (โปรดระบุคอลัมน์ หรือ ชื่อสิ่งพิมพ์ที่ท่านรับชม)">
-                                                        <label class="form-check-label" for="inlineCheckbox1">สื่อสิ่งพิมพ์ (โปรดระบุคอลัมน์ หรือ ชื่อสิ่งพิมพ์ที่ท่านรับชม) </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="advert[]" id="inlineCheckbox1" value="สื่อกลางแจ้ง(โปรดระบุสื่อกลางแจ้งที่ท่านพบเช่น บิลบอร์ด,ป้ายโฆษณา,สติกเกอร์ติดรถ)">
-                                                        <label class="form-check-label" for="inlineCheckbox1">สื่อกลางแจ้ง(โปรดระบุสื่อกลางแจ้งที่ท่านพบเช่น บิลบอร์ด,ป้ายโฆษณา,สติกเกอร์ติดรถ) </label>
-                                                    </div>
-                                                </div>    -->
                                                 <div class="form-check">
                                                     <input type="checkbox" class="form-check-input" name="other" id="other" value="other">
                                                     <label for="other">TV (โปรดระบุช่องหรือรายการที่ท่านรับชม)</label>
@@ -1254,11 +1217,11 @@
                                                         <input class="form-check-input promtion" type="checkbox" name="promtion" id="inlineCheckbox1" value="การสะสมแลกสินค้า">
                                                         <label class="form-check-label" for="inlineCheckbox1">การสะสมแลกสินค้า </label>
                                                     </div>
-                                                    <div class="form-check">
+                                                    <!-- <div class="form-check">
                                                         <input class="form-check-input promtion" type="checkbox" name="other" id="other"  value="other">
                                                         <label class="form-check-label" for="other">อื่นๆ(โปรดระบุ) </label>
                                                         <input type="text" class="form-control hidden-other" name="promtion" id="promtion">
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div> <br>
                                             <!-- 11 -->
@@ -1376,12 +1339,12 @@
                                     </div>  <br>
                                     <div class="col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="terms_and_conditions" id="terms_and_conditions" value="1" checked>
+                                            <input class="form-check-input terms_and_conditions" type="checkbox" name="terms_and_conditions" id="terms_and_conditions" value="1" >
                                             <label class="form-check-label" for="terms_and_conditions">ยอมรับเงื่อนไข <a href="conditions.php" target="_blank">ดูเพิ่มเติม</a></label>
                                         </div>
                                     </div>
                                 </div> 
-                                <input type="submit" name="next" id="submit" class="next action-button"  value="Submit" /> 
+                                <input type="submit" name="next" id="next"  class="next_sub action-button disabled" value="submit" disabled="disabled" />  
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
                             <fieldset>
@@ -1404,3 +1367,20 @@
     </div>
 </body>
 </html>
+<!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
+    <script>
+        function runApp()
+        {
+            liff.getProfile().then(profile => {
+                document.getElementById("UID").value = profile.userId; 
+                // document.getElementById("name").value = profile.displayName;
+            }).catch(err => console.error(err));
+        }
+        liff.init({ liffId: "1654916268-23RJkema" }, () => {
+        if (liff.isLoggedIn()) {
+            runApp()
+            } else {
+                liff.login();
+            }
+        },  err => console.error(err.code, error.message));
+    </script> -->
