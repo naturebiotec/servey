@@ -1,15 +1,29 @@
 <?php
     // connect database 
+    /***
+     * connect database test sever
+     */
+
     $host = "localhost";
     $username = "root";
     $password = "";
     $db = "servey";
 
+    /**
+     * connect database healthy 
+     * insert database and connect 
+    */
+    
+    // $host = "localhost";
+    // $username = "admin_beuthy";
+    // $password = "MT2541";
+    // $db = "admin_beuthy";
+
     // set Connect 
     $conn = mysqli_connect($host,$username,$password,$db);
 
     // set charset
-    mysqli_set_charset($conn, "utf-8");
+    mysqli_set_charset($conn, "utf8");
 
     // close report Notice
     error_reporting(E_ALL);
