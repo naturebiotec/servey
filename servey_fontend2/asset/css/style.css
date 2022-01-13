@@ -63,6 +63,20 @@ input.hidden-other {
     letter-spacing: 1px;
 }
 
+/* validate */
+#nameError {
+    display: none;
+    font-size: 0.8em;
+  }
+  
+  #nameError.visible {
+    display: block;
+  }
+  
+  input.invalid {
+    border-color: red;
+  }
+
 #msform input:focus,
 #msform textarea:focus
  {
@@ -79,7 +93,7 @@ input[type=checkbox] {
     bottom: 1px;
 }
 
-#msform .action-button {
+#msform .action-button{
     width: 100px;
     background: #0fcf2f;
     font-weight: bold;
@@ -90,6 +104,14 @@ input[type=checkbox] {
     padding: 10px 5px;
     margin: 10px 0px 10px 5px;
     float: right
+}
+
+#msform .action-button:disabled{
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+    background-color: #616161;
 }
 
 #msform .action-button:hover,
