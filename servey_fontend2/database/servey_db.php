@@ -3,9 +3,9 @@
 
     // pre array vaibale 
 
-    echo '<pre>';
-        print_r($_POST);
-    echo '</pre>';
+    // echo '<pre>';
+    //     print_r($_POST);
+    // echo '</pre>';
 
     if(isset($_POST['next']))
     {
@@ -18,8 +18,7 @@
         $age = $_POST['age'];
         $study = $_POST['study'];
         $job = $_POST['job'];
-        $income = $_POST['income'];
-        $status_inquiry = $_POST['status_inquiry'];
+        $income = $_POST['income']; 
         $ever_vitamin = $_POST['ever_vitamin'];
         $address = $_POST['address'];
         $district = $_POST['district'];
@@ -33,7 +32,6 @@
         $many_kind = $_POST['many_kind'];
         $influence = $_POST['influence'];
         $promtion = $_POST['promtion'];
-        $consider = $_POST['consider'];
         $brand = $_POST['brand'];
         $case_question = $_POST['case_question'];
         $terms_and_conditions = $_POST['terms_and_conditions'];
@@ -50,6 +48,34 @@
                 unset($vitamin[$arr]);
             }else{
                 $vitamin_arr .= $arr.',';
+            }
+        }
+
+        // variable array consider
+        $consider = $_POST['consider'];
+        $consider_arr = '';
+        // loop array
+        foreach($consider as $arr_ci)
+        {
+            if(empty($arr_ci))
+            {
+                unset($consider[$arr_ci]);
+            }else{
+                $consider_arr .= $arr_ci.',';
+            }
+        }
+
+        // variable array status_inquiry
+        $status_inquiry = $_POST['status_inquiry'];
+        $status_inquiry_arr = '';
+        // loop array
+        foreach($status_inquiry as $arr_si)
+        {
+            if(empty($arr_si))
+            {
+                unset($status_inquiry[$arr_si]);
+            }else{
+                $status_inquiry_arr .= $arr_si.',';
             }
         }
 
@@ -201,29 +227,71 @@
             }
         }
 
+         /**
+             * insert database
+             * @void add  
+             */
+            $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
+
+            VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
+
+            $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
+
+            /**
+             * check send data trastion to database -> servey
+             * if success echo Successfully 
+             * or faild echo Error Somting 
+             */
+
+            if($query_add)
+            {
+                echo "<script>";
+                echo "window.location= '../alter_suucess.php';";
+                echo "</script>";   
+            }else {
+                echo "Errors Somting D:";
+            }
 
         /**
-         * insert database
-         * @void add  
+         * check UID success not dupliication list
+         * show errors 
          */
-        $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
+        // $check_UID = "SELECT UID FROM servey WHERE UID = '$UID'";
+        // $query_UID = mysqli_query($conn,$check_UID);
+        // $num_query = mysqli_num_rows($query_UID);
+        
+        // if($num_query == 1) 
+        // // $num_query > 0 -> edit come back
+        // {
+        //         // echo "<script>";
+        //         // echo "window.location= '../error.php';";
+        //         // echo "</script>"; 
+        // }else {
+        //     /**
+        //      * insert database
+        //      * @void add  
+        //      */
+        //     $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
 
-        VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
+        //     VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
 
-        $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
+        //     $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
 
-        /**
-         * check send data trastion to database -> servey
-         * if success echo Successfully 
-         * or faild echo Error Somting 
-         */
+        //     /**
+        //      * check send data trastion to database -> servey
+        //      * if success echo Successfully 
+        //      * or faild echo Error Somting 
+        //      */
 
-         if($query_add)
-         {
-             echo "Successfully :D";
-         }else {
-             echo "Errors Somting D:";
-         }
+        //     if($query_add)
+        //     {
+        //         echo "<script>";
+        //         echo "window.location= '../alter_suucess.php';";
+        //         echo "</script>";   
+        //     }else {
+        //         echo "Errors Somting D:";
+        //     }
+        // }
     } 
 
 ?>
