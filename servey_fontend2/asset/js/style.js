@@ -1,62 +1,64 @@
-$(function () {
-    $('.inredient ').click(function(e) {
-        $('.inredient ').not(this).prop('checked', false);
-    });
-});
 
-$(function () {
-    $('.type_vitamin ').click(function(e) {
-        $('.type_vitamin ').not(this).prop('checked', false);
+    $(function () {
+        $('.inredient ').click(function(e) {
+            $('.inredient ').not(this).prop('checked', false);
+        });
     });
-});
+    
+    $(function () {
+        $('.type_vitamin ').click(function(e) {
+            $('.type_vitamin ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.amount ').click(function(e) {
+            $('.amount ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.how_often ').click(function(e) {
+            $('.how_often ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.how_often ').click(function(e) {
+            $('.how_often ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.many_kind ').click(function(e) {
+            $('.many_kind ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.information_vitamin ').click(function(e) {
+            $('.information_vitamin ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.influence ').click(function(e) {
+            $('.influence ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.promtion ').click(function(e) {
+            $('.promtion ').not(this).prop('checked', false);
+        });
+    });
+    
+    $(function () {
+        $('.inredient ').click(function(e) {
+            $('.inredient ').not(this).prop('checked', false);
+        });
+    });
 
-$(function () {
-    $('.amount ').click(function(e) {
-        $('.amount ').not(this).prop('checked', false);
-    });
-});
-
-$(function () {
-    $('.how_often ').click(function(e) {
-        $('.how_often ').not(this).prop('checked', false);
-    });
-});
-
-$(function () {
-    $('.how_often ').click(function(e) {
-        $('.how_often ').not(this).prop('checked', false);
-    });
-});
-
-$(function () {
-    $('.many_kind ').click(function(e) {
-        $('.many_kind ').not(this).prop('checked', false);
-    });
-});
-
-$(function () {
-    $('.information_vitamin ').click(function(e) {
-        $('.information_vitamin ').not(this).prop('checked', false);
-    });
-});
-
-$(function () {
-    $('.influence ').click(function(e) {
-        $('.influence ').not(this).prop('checked', false);
-    });
-});
-
-$(function () {
-    $('.promtion ').click(function(e) {
-        $('.promtion ').not(this).prop('checked', false);
-    });
-});
-
-$(function () {
-    $('.inredient ').click(function(e) {
-        $('.inredient ').not(this).prop('checked', false);
-    });
-});
 
 $(document).ready(function() {
     // varibale
@@ -65,26 +67,13 @@ $(document).ready(function() {
     var current = 1 ;
     var steps = $("fieldset").length;
 
-
-     /**
-     * !!BUG
-     */
-    // check button  chekbox before submit
-    // $("#terms_and_conditions").click(function() {
-    //     // if check click event handler into checkbox.
-    //     if($(this).is(":checked"))
-    //     {
-    //         $(".next").attr("disabled", false);
-    //     }else{
-    //         $(".next").attr("disabled", true);
-    //     }
-    // }); -> 
-
     $("input[type='radio']").change(function(){
-        if($(this).val()=="other")
-          $(this).closest("div").find("input[name=status_inquiry]").css('display', 'inline-block');
+        var other = document.getElementById("other").checked;
+
+        if(other)
+          $(this).closest("div").find("input[id=status_inquiry]").css('display', 'inline-block');
         else
-          $(this).closest("div").find("input[name=status_inquiry]").css('display', 'none'); 
+          $(this).closest("div").find("input[id=status_inquiry]").css('display', 'none'); 
       });
     //   hidden textbox -> infomation vitamin
     $("input[type='checkbox']").change(function() {
@@ -203,6 +192,29 @@ $(document).ready(function() {
             $(this).closest("div").find("input[id=decide]").css('display','none');
         }
     });
+
+    // check disabled used and non-used -> button next 
+    radioenble = (e) => {
+        if($(e).prop("checked"))
+        {
+            $(".next").removeAttr('disabled')
+        }
+    };
+
+    /**
+     * run submit send data form to database
+     */
+    // check button  chekbox before submit
+    $(".terms_and_conditions").click(function() {
+        // if check click event handler into checkbox.
+        if($(this).is(":checked"))
+        {
+            $(".next_sub").attr("disabled", false);
+        }else{
+            $(".next_sub").attr("disabled", true);
+        }
+    });
+    
 
     // button next page
     $(".next").click(function() {
