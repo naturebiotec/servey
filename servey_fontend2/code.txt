@@ -1,0 +1,85 @@
+// $(function () {
+    //     $('.inredient ').click(function(e) {
+    //         $('.inredient ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.type_vitamin ').click(function(e) {
+    //         $('.type_vitamin ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.amount ').click(function(e) {
+    //         $('.amount ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.how_often ').click(function(e) {
+    //         $('.how_often ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.how_often ').click(function(e) {
+    //         $('.how_often ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.many_kind ').click(function(e) {
+    //         $('.many_kind ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.information_vitamin ').click(function(e) {
+    //         $('.information_vitamin ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.influence ').click(function(e) {
+    //         $('.influence ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.promtion ').click(function(e) {
+    //         $('.promtion ').not(this).prop('checked', false);
+    //     });
+    // });
+    
+    // $(function () {
+    //     $('.inredient ').click(function(e) {
+    //         $('.inredient ').not(this).prop('checked', false);
+    //     });
+    // });
+
+    // function disable button next  add to servey 
+function checkdata () {
+        
+    var name = document.getElementById("name").value;
+    var last_name = document.getElementById("last_name").value;
+    var tel = document.getElementById("tel").value;
+    var age = document.getElementById("age").value;
+   
+    if(name !== "" && last_name !== "" && age != "" )
+    {
+        console.log("Success enable button");
+        //document.getElementById('next').disabled = false;
+    }else if (name !== "" || last_name !== "" || age != "" )
+    {
+        console.log("Errors disable button");
+       //document.getElementById('next').disabled = true;
+    }
+}
+
+// checkebox not checked
+$(function () {
+    $('.unbox').click(function(e) {
+        $('.unbox').not(this).prop('checked', false);
+    });
+});

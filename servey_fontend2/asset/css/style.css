@@ -88,9 +88,9 @@ input.hidden-other {
 }
 
 input[type=checkbox] {
-    vertical-align: middle;
-    position: relative;
-    bottom: 1px;
+    float:left; 
+    vertical-align:middle; 
+    margin-right:10px;
 }
 
 #msform .action-button{
