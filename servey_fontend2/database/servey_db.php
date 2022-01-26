@@ -3,9 +3,9 @@
 
     // pre array vaibale 
 
-    // echo '<pre>';
-    //     print_r($_POST);
-    // echo '</pre>';
+    echo '<pre>';
+        print_r($_POST);
+    echo '</pre>';
 
     if(isset($_POST['next']))
     {
@@ -231,11 +231,11 @@
              * insert database
              * @void add  
              */
-            $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
+            // $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
 
-            VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
+            // VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
 
-            $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
+            // $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
 
             /**
              * check send data trastion to database -> servey

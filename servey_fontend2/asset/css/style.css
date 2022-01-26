@@ -47,6 +47,10 @@ input.hidden-other {
     display: none;
 }
 
+select.hidden-other-select {
+    display: none;
+}
+
 #msform input,
 #msform textarea {
     padding: 8px 15px 8px 15px;
@@ -154,6 +158,10 @@ input[type=checkbox] {
 .purple-text {
     color: #0fcf2f;
     font-weight: normal
+}
+
+.br_pre {
+    margin-top: 10px;
 }
 
 .steps {
