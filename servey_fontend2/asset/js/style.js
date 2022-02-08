@@ -402,6 +402,15 @@ $(document).ready(function() {
             $(this).closest("div").find("input[id='other_promtion']").css('display','none');
         }
     });
+    // other_promotion
+    $("input[type='radio']").change(function(){
+        var other_promotion = document.getElementById('other_promotion');
+        if(other_promotion){
+            $(this).closest("div").find("input[id='other_promotion']").css('display','inline-block');
+        }else{
+            $(this).closest("div").find("input[id='other_promotion']").css('display','none');
+        }
+    });
     // other_soical
     $("input[type='checkbox']").change(function(){
         if($(this).val() == "other_soical"){
