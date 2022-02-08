@@ -24,11 +24,11 @@
                         confirmButtonText: 'กลับหน้าแรก'
                         }).then((result) => {
                         if (result.isConfirmed){
-                            window.location.href="./index.php";
+                            window.location.href="./savery_line.php";
                             self.close();
                         }
                         else{
-                                window.location.href="./index.php";
+                                window.location.href="./savery_line.php";
                                 self.close();
                             }
                         });
