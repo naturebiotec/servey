@@ -24,16 +24,13 @@
         $district = $_POST['district'];
         $amphoe = $_POST['amphoe'];
         $provices = $_POST['provices'];
-        $zip_code = $_POST['zip_code'];  
-        $inredient = $_POST['inredient'];     
-        $type_vitamin = $_POST['type_vitamin'];
+        $zip_code = $_POST['zip_code'];      
         $amount = $_POST['amount'];
         $how_often = $_POST['how_often'];
         $many_kind = $_POST['many_kind'];
-        $influence = $_POST['influence'];
-        $promtion = $_POST['promtion'];
         $brand = $_POST['brand'];
         $case_question = $_POST['case_question'];
+        $platform = $_POST['platform'];
         $terms_and_conditions = $_POST['terms_and_conditions'];
 
         // varibale array
@@ -226,16 +223,111 @@
                 $feature_arr .= $arr_ft.',';
             }
         }
-
+        // $inredient = $_POST['inredient']; 
+        $inredient = $_POST['inredient'];
+        $inredient_arr = '';
+        // loop array
+        foreach($inredient as $arr_id)
+        {
+            //$inredient_arr .= $arr_ft.',';
+            if(empty($arr_id))
+            {
+                unset($inredient[$arr_id]);
+            }else{
+                $inredient_arr .= $arr_id.',';
+            }
+        }
+        //  $type_vitamin = $_POST['type_vitamin'];
+        $type_vitamin = $_POST['type_vitamin'];
+        $type_vitamin_arr = '';
+        // loop array
+        foreach($type_vitamin as $arr_tv)
+        {
+            //$type_vitamin_arr .= $arr_ft.',';
+            if(empty($arr_tv))
+            {
+                unset($type_vitamin[$arr_tv]);
+            }else{
+                $type_vitamin_arr .= $arr_tv.',';
+            }
+        }
+        // $influence = $_POST['influence'];
+        $influence = $_POST['influence'];
+        $influence_arr = '';
+        // loop array
+        foreach($influence as $arr_if)
+        {
+            //$influence_arr .= $arr_ft.',';
+            if(empty($arr_if))
+            {
+                unset($influence[$arr_if]);
+            }else{
+                $influence_arr .= $arr_if.',';
+            }
+        }
+        // $promtion = $_POST['promtion'];
+        $promtion = $_POST['promtion'];
+        $promtion_arr = '';
+        // loop array
+        foreach($promtion as $arr_po)
+        {
+            //$$promtion_arr .= $arr_ft.',';
+            if(empty($arr_po))
+            {
+                unset($promtion[$arr_po]);
+            }else{
+                $promtion_arr .= $arr_po.',';
+            }
+        }
          /**
              * insert database
              * @void add  
              */
-            // $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
+            // $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree,platform) 
 
-            // VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
+            // VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient_arr','$type_vitamin_arr','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence_arr','$advert_arr','$promtion','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions','$platform')";
 
             // $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
+
+            // /**
+            //  * check send data trastion to database -> servey
+            //  * if success echo Successfully 
+            //  * or faild echo Error Somting 
+            //  */
+
+            // if($query_add)
+            // {
+            //     echo "<script>";
+            //     echo "window.location= '../alter_suucess.php';";
+            //     echo "</script>";   
+            // }else {
+            //     echo "Errors Somting D:";
+            // }
+
+        /**
+         * check UID success not dupliication list
+         * show errors 
+         */
+        $check_UID = "SELECT UID FROM servey WHERE UID = '$UID'";
+        $query_UID = mysqli_query($conn,$check_UID);
+        $num_query = mysqli_num_rows($query_UID);
+        
+        if($num_query == 1) 
+        // $num_query > 0 -> edit come back
+        {
+                echo "<script>";
+                echo "window.location= '../error.php';";
+                echo "</script>"; 
+        }else {
+            /**
+             * insert database
+             * @void add  
+             */
+            $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree,platform) 
+
+            VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient_arr','$type_vitamin_arr','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence_arr','$advert_arr','$promtion_arr','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions','$platform')";
+
+            $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
 
             /**
              * check send data trastion to database -> servey
@@ -251,47 +343,7 @@
             }else {
                 echo "Errors Somting D:";
             }
-
-        /**
-         * check UID success not dupliication list
-         * show errors 
-         */
-        // $check_UID = "SELECT UID FROM servey WHERE UID = '$UID'";
-        // $query_UID = mysqli_query($conn,$check_UID);
-        // $num_query = mysqli_num_rows($query_UID);
-        
-        // if($num_query == 1) 
-        // // $num_query > 0 -> edit come back
-        // {
-        //         // echo "<script>";
-        //         // echo "window.location= '../error.php';";
-        //         // echo "</script>"; 
-        // }else {
-        //     /**
-        //      * insert database
-        //      * @void add  
-        //      */
-        //     $sql_add_servery = "INSERT INTO servey(UID,name,last_name,tel,gender,age,study,job,income,status_inquiry,ever_vitamin,address,district,amphoe,provices,zip_code,vitamin,importen,main_case,inredient,type_vitamin,amount,how_often,many_kind,information_vitamin,location,influence,advert,promtion,soical,consider,feature,brand,case_question,case_eat,know_vitamin,decide,agree) 
-
-        //     VALUE('$UID','$name','$last_name','$tel','$gender','$age','$study','$job','$income','$status_inquiry_arr','$ever_vitamin','$address','$district','$amphoe','$provices','$zip_code','$vitamin_arr','$importen_arr','$main_case_arr','$inredient','$type_vitamin','$amount','$how_often','$many_kind','$information_vitamin_arr','$location_arr','$influence','$advert_arr','$promtion','$soical_arr','$consider_arr','$feature_arr','$brand','$case_eat_arr','$case_eat_arr','$know_vitamin_arr','$decide_arr','$terms_and_conditions')";
-
-        //     $query_add = mysqli_query($conn,$sql_add_servery) or die("Errors: $sql_add_servery".mysqli_error($conn));
-
-        //     /**
-        //      * check send data trastion to database -> servey
-        //      * if success echo Successfully 
-        //      * or faild echo Error Somting 
-        //      */
-
-        //     if($query_add)
-        //     {
-        //         echo "<script>";
-        //         echo "window.location= '../alter_suucess.php';";
-        //         echo "</script>";   
-        //     }else {
-        //         echo "Errors Somting D:";
-        //     }
-        // }
+        }
     } 
 
 ?>
